@@ -2,13 +2,7 @@
 
 require_once '../config.php';
 
-$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
-$query = $pdo->prepare($sql);
-$query->execute();
-
-$blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
-
-?>
+?>	
 
 
 <!DOCTYPE html>
@@ -30,29 +24,24 @@ $blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
 
 		<div class="row">
 			<div class="col-md-8">
-				<h2>Posts</h2>
-				<a href="insert-post.php" class="btn btn-primary">New Post</a>
+				<h2>New Post</h2>
+				<a href="posts.php" class="btn btn-default">Back</a> <br><br>
+				
+				<form action="insert-post.php" method="post">
+					<div class="form-group">
+						<label for="inputTitle">Title</label> <br>
+						<input type="text" name="title" id="inputTitle" value="" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="inputContent">Content</label> <br>
+						<textarea name="content" id="inputContent" rows="5" class="form-control"></textarea><br>
+					</div>
 
-				<table class="table">
-					<tr>
-						<th>Title</th>
-						<th>Edit</th>
-						<th>Delete</th>
-					</tr>
-					<?php foreach ($blogPosts as $blog): ?>
-					
-					<tr>
-						<td><?= $blog['title'] ?></td>
-						<td>
-							<a href="edit.php?id=<?= $blog['id'] ?>">Edit</a>
-						</td>
-						<td>
-							<a href="delete.php?id=<?= $blog['id'] ?>">Delete</a>
-						</td>
-					</tr>
-						
-					<?php endforeach; ?>
-				</table>
+					<div class="form-group">
+						<input type="submit" value="Save" class="btn btn-primary">
+					</div>
+				</form>
+				
 			</div>
 
 
