@@ -1,16 +1,3 @@
-<?php 
-
-require_once 'config.php';
-
-$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
-$query = $pdo->prepare($sql);
-$query->execute();
-
-$blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,20 +17,11 @@ $blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
 
 		<div class="row">
 			<div class="col-md-8">
-				<?php foreach ($blogPosts as $blog): ?>
-					<div class="blog-post">
-						<h2><?= $blog['title'] ?></h2>
-						<p>
-							Jan 1, 2020 by <a href="#">Roosevelt</a>
-						</p>
-						<div class="blog-post-image">
-							<img src="http://lorempixel.com/750/250/sports/<?= $blog['id'] ?>" alt="">
-						</div>
-						<div class="blog-post-content">
-							<?= $blog["content"] ?>
-						</div>
-					</div>
-				<?php endforeach; ?>
+				<ul>
+					<li>
+						<a href="posts.php">Manage Post</a>
+					</li>
+				</ul>
 			</div>
 
 
