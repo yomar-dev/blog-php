@@ -1,6 +1,17 @@
 <?php 
 
 require_once '../config.php';
+$result = false;
+
+if(!empty($_POST)){
+	$sql = "INSERT INTO blog_posts (title, content) VALUES (:title, :content)";
+	$query = $pdo->prepare($sql);
+	
+	$result = $query->execute([
+		'title' => $_POST['title'],
+		'content' => $_POST['content']
+	]);
+}
 
 ?>	
 
@@ -26,6 +37,12 @@ require_once '../config.php';
 			<div class="col-md-8">
 				<h2>New Post</h2>
 				<a href="posts.php" class="btn btn-default">Back</a> <br><br>
+
+				<?php if($result): ?>
+					<div class="alert alert-success">
+						Post Guardado!!
+					</div>
+				<?php endif; ?>
 				
 				<form action="insert-post.php" method="post">
 					<div class="form-group">
