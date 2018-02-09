@@ -16,12 +16,13 @@ $route = $_GET['route'] ?? '/';
 use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
-$router->get('', function() use ($pdo){
+$router->get('/', function() use ($pdo){
 	$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
 	$query = $pdo->prepare($sql);
 	$query->execute();
 
 	$blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
+	include '../views/index.php';
 });
 
 /**
