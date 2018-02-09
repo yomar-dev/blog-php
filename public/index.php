@@ -6,5 +6,22 @@ error_reporting(E_ALL);
 
 require_once '../config.php';
 
+$route = $_GET['route'] ?? '/';
+
+switch ($route) {
+	case '/':
+		require '../index.php';
+		break;
+	case '/admin':
+		require '../admin/index.php';
+		break;
+	case '/admin/posts':
+		require '../admin/posts.php';
+		break;	
+	default:
+		require '../index.php';
+		break;
+}
+
 
 ?>
