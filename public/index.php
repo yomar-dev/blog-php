@@ -8,8 +8,11 @@ error_reporting(E_ALL);
  * Módulo de Autoloading de composer.
  */
 require_once '../vendor/autoload.php';
-
 require_once '../config.php';
+
+$baseDir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+$baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . $baseDir;
+define('BASE_URL', $baseUrl);
 
 $route = $_GET['route'] ?? '/';
 
