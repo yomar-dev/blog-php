@@ -35,7 +35,7 @@ $router->get('/', function() use ($pdo){
 	$query->execute();
 
 	$blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
-	include '../views/index.php';
+	return render('../views/index.php', ['blogPosts' => $blogPosts]);
 });
 
 /**
