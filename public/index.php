@@ -16,6 +16,16 @@ define('BASE_URL', $baseUrl);
 
 $route = $_GET['route'] ?? '/';
 
+function render($fileName, $params = []){
+	/**
+	 * ob_start(): Va a omitir cualquier salida que tenga la App
+	 */
+	ob_start();
+	extract($params);
+	include $fileName;
+	return ob_get_clean();
+}
+
 use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
