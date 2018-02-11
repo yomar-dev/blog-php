@@ -31,11 +31,16 @@ use Phroute\Phroute\RouteCollector;
 $router = new RouteCollector();
 
 $router->get('/admin', function(){
-	/**
-	 * De momento para ingresar a esta vista hay hacerlo a través de la siguiente URL:
-	 * http://localhost/blog-php/public/index.php?route=/admin
-	 */
 	return render('../views/admin/index.php');
+});
+
+$router->get('/admin/posts', function() use ($pdo){
+	$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
+	$query = $pdo->prepare($sql);
+	$query->execute();
+
+	$blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
+	return render('../views/admin/posts.php', ['blogPosts' => $blogPosts]);
 });
 
 $router->get('/', function() use ($pdo){
