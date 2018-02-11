@@ -47,6 +47,17 @@ $router->get('/admin/posts/create', function(){
 	return render('../views/admin/insert-post.php');
 });
 
+$router->post('/admin/posts/create', function() use ($pdo){
+	$sql = "INSERT INTO blog_posts (title, content) VALUES (:title, :content)";
+	$query = $pdo->prepare($sql);
+	
+	$result = $query->execute([
+		'title' => $_POST['title'],
+		'content' => $_POST['content']
+	]);
+	return render('../views/admin/insert-post.php', ['result' => $result]);
+});
+
 $router->get('/', function() use ($pdo){
 	$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
 	$query = $pdo->prepare($sql);
