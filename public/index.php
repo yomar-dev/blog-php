@@ -29,6 +29,15 @@ function render($fileName, $params = []){
 use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
+
+$router->get('/admin', function(){
+	/**
+	 * De momento para ingresar a esta vista hay hacerlo a través de la siguiente URL:
+	 * http://localhost/blog-php/public/index.php?route=/admin
+	 */
+	return render('../views/admin/index.php');
+});
+
 $router->get('/', function() use ($pdo){
 	$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
 	$query = $pdo->prepare($sql);

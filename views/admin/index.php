@@ -17,6 +17,7 @@
 
 		<div class="row">
 			<div class="col-md-8">
+				<h2>Admin Panel</h2>
 				<ul>
 					<li>
 						<a href="posts.php">Manage Post</a>
