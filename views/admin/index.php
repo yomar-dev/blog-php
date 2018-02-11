@@ -20,7 +20,7 @@
 				<h2>Admin Panel</h2>
 				<ul>
 					<li>
-						<a href="posts.php">Manage Post</a>
+						<a href="<?= BASE_URL; ?>admin/posts">Manage Post</a>
 					</li>
 				</ul>
 			</div>
@@ -37,7 +37,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<footer>
-					Panel de Administración <a href="admin/index.php" title="">Ingresar</a>
+					Panel de Administración <a href="<?= BASE_URL; ?>admin" title="">Ingresar</a>
 				</footer>
 			</div>
 		</div>

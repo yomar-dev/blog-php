@@ -45,7 +45,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<footer>
-					Panel de Administración <a href="admin/index.php" title="">Ingresar</a>
+					Panel de Administración <a href="<?= BASE_URL; ?>admin" title="">Ingresar</a>
 				</footer>
 			</div>
 		</div>

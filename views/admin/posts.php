@@ -18,7 +18,7 @@
 		<div class="row">
 			<div class="col-md-8">
 				<h2>Posts</h2>
-				<a href="insert-post.php" class="btn btn-primary">New Post</a>
+				<a href="<?= BASE_URL; ?>admin/posts/create" class="btn btn-primary">New Post</a>
 
 				<table class="table">
 					<tr>
@@ -53,7 +53,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<footer>
-					Panel de Administración <a href="admin/index.php" title="">Ingresar</a>
+					Panel de Administración <a href="<?= BASE_URL; ?>admin" title="">Ingresar</a>
 				</footer>
 			</div>
 		</div>

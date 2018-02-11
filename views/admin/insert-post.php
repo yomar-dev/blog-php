@@ -35,7 +35,7 @@ if(!empty($_POST)){
 		<div class="row">
 			<div class="col-md-8">
 				<h2>New Post</h2>
-				<a href="posts.php" class="btn btn-default">Back</a> <br><br>
+				<a href="<?= BASE_URL; ?>admin/posts" class="btn btn-default">Back</a> <br><br>
 
 				<?php if($result): ?>
 					<div class="alert alert-success">
@@ -71,7 +71,7 @@ if(!empty($_POST)){
 		<div class="row">
 			<div class="col-md-12">
 				<footer>
-					Panel de Administración <a href="admin/index.php" title="">Ingresar</a>
+					Panel de Administración <a href="<?= BASE_URL; ?>admin" title="">Ingresar</a>
 				</footer>
 			</div>
 		</div>
