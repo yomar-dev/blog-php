@@ -58,14 +58,7 @@ $router->post('/admin/posts/create', function() use ($pdo){
 	return render('../views/admin/insert-post.php', ['result' => $result]);
 });
 
-$router->get('/', function() use ($pdo){
-	$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
-	$query = $pdo->prepare($sql);
-	$query->execute();
-
-	$blogPosts = $query->fetchAll(PDO::FETCH_ASSOC);
-	return render('../views/index.php', ['blogPosts' => $blogPosts]);
-});
+$router->controller('/', App\Controllers\IndexController::class);
 
 /**
  * Objeto que va a tomar la ruta que nos esta llegando para luego
