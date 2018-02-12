@@ -30,9 +30,7 @@ use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
 
-$router->get('/admin', function(){
-	return render('../views/admin/index.php');
-});
+$router->controller('/admin', App\Controllers\Admin\IndexController::class);
 
 $router->get('/admin/posts', function() use ($pdo){
 	$sql = "SELECT * FROM blog_posts ORDER BY id DESC";
