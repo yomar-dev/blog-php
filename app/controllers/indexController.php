@@ -12,7 +12,7 @@ class IndexController extends BaseController{
 		$query->execute();
 
 		$blogPosts = $query->fetchAll(\PDO::FETCH_ASSOC);
-		return $this->render('../views/index.php', ['blogPosts' => $blogPosts]);
+		return $this->render('index.twig', ['blogPosts' => $blogPosts]);
 	}
 }
 

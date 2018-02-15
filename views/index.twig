@@ -17,20 +17,20 @@
 
 		<div class="row">
 			<div class="col-md-8">
-				<?php foreach ($blogPosts as $blog): ?>
+				{% for blog in blogPosts %}					
 					<div class="blog-post">
-						<h2><?= $blog['title'] ?></h2>
+						<h2>{{ blog.title }}</h2>
 						<p>
 							Jan 1, 2020 by <a href="#">Roosevelt</a>
 						</p>
 						<div class="blog-post-image">
-							<img src="http://lorempixel.com/750/250/sports/<?= $blog['id'] ?>" alt="">
+							<img src="http://lorempixel.com/750/250/sports/{{ blog.id }}" alt="">
 						</div>
 						<div class="blog-post-content">
-							<?= $blog["content"] ?>
+							{{ blog.content }}
 						</div>
 					</div>
-				<?php endforeach; ?>
+				{% endfor %}
 			</div>
 
 
