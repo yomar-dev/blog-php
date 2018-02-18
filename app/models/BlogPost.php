@@ -14,4 +14,11 @@ class BlogPost extends Model{
 	 * tabla que va a estar utilizando la BD.
 	 */
 	protected $table = 'blog_posts';
+	/**
+	 * NOTA: Tuvimos que crear dos nuevas columnas en la BD llamadas:
+	 * created_at y updated_at porque Eloquent por defecto siempre se inserte un registro
+	 * va a llenar una columna llamada created_at y cuando se modifique llenará el
+	 * campo updated_at, cabe destacar que esta funcionalidad se puede deshabilitar.
+	 */
+	protected $fillable = ['title', 'content'];
 }
