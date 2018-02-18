@@ -13,9 +13,9 @@
 	{% if errors %}
 		<div class="alert alert-danger">
 			<ul>
-				{% for messages in errors %}
+				{% for input, messages in errors %}
 				    {% for message in messages %}
-				        <li>{{ message }}</li>
+				        <li>{{ input }}: {{ message }}</li>
 				    {% endfor %}
 				{% endfor %}
 			</ul>
