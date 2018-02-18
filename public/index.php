@@ -13,6 +13,12 @@ $baseDir = str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_N
 $baseUrl = 'http://' . $_SERVER['HTTP_HOST'] . $baseDir;
 define('BASE_URL', $baseUrl);
 
+/**
+ * Recibe como parametro la ruta donde se encuentra nuestro archivo .env
+ */
+$dotenv = new \Dotenv\Dotenv(__DIR__ . '/..');
+$dotenv->load();
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
