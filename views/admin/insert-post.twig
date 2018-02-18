@@ -9,6 +9,18 @@
 			Post Saved!!
 		</div>
 	{% endif %}
+
+	{% if errors %}
+		<div class="alert alert-danger">
+			<ul>
+				{% for messages in errors %}
+				    {% for message in messages %}
+				        <li>{{ message }}</li>
+				    {% endfor %}
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
 	
 	<form method="post">
 		<div class="form-group">
