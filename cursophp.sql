@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2018 a las 05:34:12
+-- Tiempo de generación: 06-03-2018 a las 03:51:34
 -- Versión del servidor: 10.1.28-MariaDB
 -- Versión de PHP: 7.1.10
 
@@ -60,18 +60,10 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `email` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Andres Iniesta', 'iniesta@fcb.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
-(2, 'Samuel', 'samuel@gmail.com', 'd5f12e53a182c062b6bf30c1445153faff12269a'),
-(3, 'Sergio Busquets', 'sergio@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
-(4, 'Pedro', 'pedro@gmail.com', 'b1b3773a05c0ed0176787a4f1574ff0075f7521e');
 
 --
 -- Índices para tablas volcadas
@@ -103,7 +95,7 @@ ALTER TABLE `blog_posts`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
