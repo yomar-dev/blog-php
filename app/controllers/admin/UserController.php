@@ -12,6 +12,14 @@ class UserController extends BaseController{
 			'users' => $users
 		]);
 	}
+
+	public function getCreate(){
+
+	}
+
+	public function postCreate(){
+		
+	}
 }
 
 
