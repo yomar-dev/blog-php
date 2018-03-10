@@ -14,11 +14,11 @@ class UserController extends BaseController{
 	}
 
 	public function getCreate(){
-
+		return $this->render('admin/insert-user.twig');
 	}
 
 	public function postCreate(){
-		
+
 	}
 }
 
